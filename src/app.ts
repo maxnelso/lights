@@ -1,6 +1,9 @@
-const message: string = 'Hello, World!';
+import paper from "paper"
 
-const heading = document.createElement('h1');
-heading.textContent = message;
+paper.setup('canvas');
 
-document.body.appendChild(heading);
+new paper.Path.Circle({
+    center   : paper.view.center,
+    radius   : 50,
+    fillColor: 'orange',
+});
