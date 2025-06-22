@@ -31,7 +31,7 @@ addEventListener("keydown", function (event) {
 });
 
 addEventListener("mousedown", function (event) {
-  console.log(event.button);
+  console.log(event.button, event.clientX, event.clientY);
   switch (event.button) {
     case 0:
       addPoint(event.clientX, event.clientY);
