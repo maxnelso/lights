@@ -65,6 +65,7 @@ export function floydWarshall(
   // Path reconstruction
   const allPaths: paper.Point[][] = [];
   for (let i = 0; i < numNodes; i++) {
+    const nodePaths: paper.Point[] = [];
     for (let j = 0; j < numNodes; j++) {
       if (next[i][j] === null) {
         console.error("Unable to find path.");
@@ -83,8 +84,9 @@ export function floydWarshall(
         current = nextNodeIndex;
         path.push(nodes[current]);
       }
-      allPaths.push(path);
+      nodePaths.push(path);
     }
+    allPaths.push(nodePaths);
   }
 
   return allPaths;
